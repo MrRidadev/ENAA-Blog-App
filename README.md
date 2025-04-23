@@ -1,27 +1,66 @@
-# ENAABolgApp
+# 📰 Blog App - Projet Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.18.
+Une application de blog construite avec Angular 18 permettant aux utilisateurs de consulter, créer, modifier et supprimer des articles, avec système d'authentification et gestion des commentaires.
 
-## Development server
+---
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 🔧 Fonctionnalités
 
-## Code scaffolding
+### Utilisateur anonyme
+- 🔍 Consulter la liste des articles
+- 📖 Lire un article en détail
+- 🗂️ Filtrer les articles par catégorie ou mot-clé
+- 🔎 Rechercher un article par titre
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Utilisateur authentifié (auteur/admin)
+- 🔐 Connexion via un formulaire de login
+- 📝 Création de nouveaux articles (titre, contenu, image, catégorie)
+- ✏️ Modification des articles existants
+- ❌ Suppression d’articles créés
+- 💬 Ajouter ou supprimer des commentaires
+- 📊 Accès à un tableau de bord privé
 
-## Build
+### Sécurité
+- 🔒 Ajout, modification et suppression des articles réservés aux utilisateurs authentifiés
+- 🛡️ Accès au tableau de bord protégé par `AuthGuard`
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+---
 
-## Running unit tests
+## 🧱 Architecture Technique
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Composants Angular
+- `navbar` : barre de navigation dynamique
+- `home` : page d’accueil avec articles récents
+- `post-list` : liste des articles avec pagination
+- `post-detail` : détail d’un article
+- `post-form` : création/modification d’un article
+- `login` : formulaire d’authentification
+- `comment-section` : gestion des commentaires
 
-## Running end-to-end tests
+### Services Angular
+- `PostService` : CRUD des articles via une API
+- `AuthService` : gestion de l'authentification et session
+- `CommentService` : gestion des commentaires
+- `AuthGuard` : protection des routes privées
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+---
 
-## Further help
+## 💻 Technologies Utilisées
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+| Type          | Technologie         |
+|---------------|---------------------|
+| Frontend      | Angular 18         |
+| Langages      | TypeScript, HTML, SCSS |
+| UI Framework  | Tailwind CSS ( Bootstrap) |
+| Backend/API   |  Firebase |
+| Authentification | LocalStorage      |
+| Outils        | Git, GitHub, Postman, Angular CLI |
+
+---
+
+## 🚀 Installation et Lancement
+
+### 1. Cloner le projet
+```bash
+git clone https://github.com/MrRidadev/ENAA-Blog-App.git
+cd ENAABolgApp
