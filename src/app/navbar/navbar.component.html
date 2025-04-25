@@ -11,18 +11,19 @@
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow">
     <div class="container">
-      <a class="navbar-brand fw-bold" href="#"> TechBlog</a>
+      <a class="navbar-brand fw-bold" href="/"> TechBlog</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navContent">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item"><a class="nav-link active" href="#">Accueil</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Catégories</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">À propos</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-          <li class="nav-item">
-            <button class="btn btn-outline-light ms-lg-3">Connexion</button>
+          <li class="nav-item"><a class="nav-link active" href="/">Accueil</a></li>
+          <li class="nav-item"><a class="nav-link" routerLink="/categorie">Catégories</a></li>
+          <li class="nav-item"><a class="nav-link" routerLink="/apropos">À propos</a></li>
+          <li class="nav-item"><a class="nav-link" routerLink="/cantact">Contact</a></li>
+          <li class="nav-item d-flex align-items-center ms-lg-3">
+            <a  class="btn btn-outline-light me-2" routerLink="/login">Login</a>
+            <a routerLink="/register" class="btn btn-light text-dark">Sign Up</a>
           </li>
         </ul>
       </div>
