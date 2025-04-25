@@ -7,6 +7,7 @@ import { AproposComponent } from './apropos/apropos.component';
 import { PostDetailComponent } from './post-detail/post-detail.component';
 import { ContactComponent } from './contact/contact.component';
 import { PostListComponent } from './post-list/post-list.component';
+import { PostFormComponent } from './post-form/post-form.component';
 
 export const routes: Routes = [
     {
@@ -40,10 +41,10 @@ export const routes: Routes = [
         component : PostListComponent
     }
 
-
+,
 
  {   path: 'post-form',
-     component : PostFormComponent },
+     component : PostFormComponent }
 
 
 ];

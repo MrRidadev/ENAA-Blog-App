@@ -3,17 +3,17 @@
   <div class="container d-flex align-items-center justify-content-center min-vh-100">
     <div class="card shadow-lg p-4" style="width: 100%; max-width: 400px;">
       <h3 class="text-center mb-4">Connexion</h3>
-      <form>
+      <form   >
         <div class="mb-3">
           <label for="email" class="form-label">Adresse e-mail</label>
-          <input type="email" class="form-control" id="email" placeholder="nom@exemple.com" required>
+          <input type="email" [(ngModel)]="email" class="form-control" name="email" placeholder="nom@exemple.com" required>
         </div>
         <div class="mb-3">
           <label for="password" class="form-label">Mot de passe</label>
-          <input type="password" class="form-control" id="password" placeholder="••••••••" required>
+          <input type="password" class="form-control" name="password" [(ngModel)]="password" placeholder="••••••••" required>
         </div>
         <div class="d-grid mb-3">
-          <button type="submit" class="btn btn-primary">Se connecter</button>
+          <button type="submit" class="btn btn-primary" (click)="onSubmit()">Se connecter</button>
         </div>
         <p class="text-center">
           Pas encore de compte ?
