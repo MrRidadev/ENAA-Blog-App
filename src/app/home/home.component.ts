@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { PostDetailComponent } from "../post-detail/post-detail.component";
-import { PostListComponent } from "../post-list/post-list.component";
+import { PostDetailComponent } from "../post/post-detail/post-detail.component";
+import { PostListComponent } from "../post/post-list/post-list.component";
 import { AproposComponent } from "../apropos/apropos.component";
 import { ContactComponent } from "../contact/contact.component";
 
