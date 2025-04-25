@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { HomeComponent } from './home/home.component';
@@ -38,4 +39,11 @@ export const routes: Routes = [
         path : 'categorie',
         component : PostListComponent
     }
+
+
+
+ {   path: 'post-form',
+     component : PostFormComponent },
+
+
 ];
