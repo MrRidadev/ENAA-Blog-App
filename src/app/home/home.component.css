@@ -1,0 +1,26 @@
+.bg-overlay {
+    position: absolute;
+    inset: 0;
+    background: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=2830&h=1500&q=80') no-repeat center center/cover;
+    filter: brightness(0.4) blur(2px);
+    z-index: -1;
+  }
+
+  .section-dark {
+    position: relative;
+    background-color: #111827;
+    color: white;
+    padding: 6rem 1rem;
+    height: 532px;
+  }
+
+  .link-arrow {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    transition: color 0.3s;
+  }
+
+  .link-arrow:hover {
+    color: #0d6efd;
+  }
