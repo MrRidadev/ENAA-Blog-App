@@ -7,9 +7,8 @@ import { AproposComponent } from './apropos/apropos.component';
 import { PostDetailComponent } from './post/post-detail/post-detail.component';
 import { ContactComponent } from './contact/contact.component';
 
-import { PostListComponent } from './post/post-list/post-list.component';
+import { PostListComponent} from './post/post-list/post-list.component';
 import { PostFormComponent } from './post/post-form/post-form.component';
-import { NgModule } from '@angular/core';
 
 export const routes: Routes = [
   
@@ -46,8 +45,10 @@ export const routes: Routes = [
         component : PostListComponent
     },
 
-    {   path: 'postform',
-     component: PostFormComponent
-    },
-    
+    {   path: 'post-form',
+     component : PostFormComponent}
+    }
+
+
+
 ];

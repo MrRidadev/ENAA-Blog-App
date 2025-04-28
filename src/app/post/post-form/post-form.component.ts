@@ -1,56 +1,39 @@
-import { Component, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { Component,OnInit } from '@angular/core';
+import { FormsModule,FormBuilder,FormGroup,Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { NgModel } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { Router, ActivatedRoute } from '@angular/router';
-import { PostService } from '../../services/post.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-post-form',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule,CommonModule,RouterLink],
   templateUrl: './post-form.component.html',
   styleUrls: ['./post-form.component.css']
 })
-export class PostFormComponent implements OnInit {
+export class PostFormComponent {
   id = '';
   title = '';
   content = '';
+  
+
 
   constructor(
-    private postService: PostService,
-    private router: Router,
-    private route: ActivatedRoute
-  ) {}
+    private postService : PostService,
+    private router : Router,
+  ){}
 
-  ngOnInit(): void {
-    // Si on est en mode édition, on récupère l'ID du paramètre et on charge les données
-    this.id = this.route.snapshot.paramMap.get('id') || '';
-    if (this.id) {
-      this.postService.getPostById(this.id).subscribe((post: any) => {
-        this.title = post.title;
-        this.content = post.content;
-      });
-    }
-  }
+  createPost(){
+    const newPost  = {
+      title : this.title,
+      content : this.content
+    };
 
-  savePost(): void {
-    const newPost = { title: this.title, content: this.content };
-    if (this.id) {
-      this.updatePost(newPost);
-    } else {
-      this.createPost(newPost);
-    }
-  }
-
-  createPost(post: any): void {
-    this.postService.createPost(post).subscribe(() => {
-      this.router.navigate(['/post']);
+    this.postService.creatPost(newPost).subscribe(()=>{
+      this.router.navigate(['/posts'])
     });
   }
 
-  updatePost(post: any): void {
-    this.postService.updatePost(this.id, post).subscribe(() => {
-      this.router.navigate(['/post']);
-    });
-  }
+
 }
