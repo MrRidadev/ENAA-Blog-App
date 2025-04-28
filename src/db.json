@@ -1,0 +1,25 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "First Post",
+      "content": "This is the content of the first post."
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Category 1"
+    }
+  ],
+  
+    "articles": [
+    {
+      "id": 1,
+      "title": "First Article",
+      "content": "This is the content of the first article."
+    }
+    ]
+  
+  
+}
