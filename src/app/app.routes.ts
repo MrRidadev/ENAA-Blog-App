@@ -1,4 +1,4 @@
-import { Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
@@ -7,10 +7,13 @@ import { AproposComponent } from './apropos/apropos.component';
 import { PostDetailComponent } from './post/post-detail/post-detail.component';
 import { ContactComponent } from './contact/contact.component';
 
-import { PostListComponent } from './post/post-list/post-list.component';
-import { PostFormComponent } from './post-form/post-form.component';
+import { PostListComponent} from './post/post-list/post-list.component';
+import { PostFormComponent } from './post/post-form/post-form.component';
 
 export const routes: Routes = [
+  
+    { path: 'posts', component: PostListComponent },
+    { path: 'posts/new', component: PostFormComponent },
     {
         path : '',
         component : HomeComponent
@@ -42,8 +45,10 @@ export const routes: Routes = [
         component : PostListComponent
     },
 
-    {   path: 'postform',
-     component: PostFormComponent
-    },
-    
+    {   path: 'post-form',
+     component : PostFormComponent}
+    }
+
+
+
 ];

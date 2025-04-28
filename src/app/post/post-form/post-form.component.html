@@ -1,0 +1,17 @@
+<div class="container py-5">
+  <h2 class="mb-4">{{ id ? 'Edit Post' : 'Create New Post' }}</h2>
+  <form (ngSubmit)="savePost()">
+    <div class="mb-3">
+      <label class="form-label">Title</label>
+      <input type="text" class="form-control" [(ngModel)]="title" name="title" required />
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Content</label>
+      <textarea class="form-control" [(ngModel)]="content" name="content" rows="5" required></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-success">{{ id ? 'Update' : 'Create' }}</button>
+    <a routerLink="/posts" class="btn btn-secondary ms-2">Cancel</a>
+  </form>
+</div>

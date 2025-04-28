@@ -2,33 +2,34 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-
-export interface Post{
-  id? : number;
-  title : string;
-  content : string;
-}
-
 @Injectable({
   providedIn: 'root'
 })
 export class PostService {
+  getPost() {
+    throw new Error('Method not implemented.');
+  }
+  private apiUrl = 'http://localhost:3000/posts'; // Assure-toi que l'URL est correcte
 
-  private apiUrl = 'http://localhost:3000/posts';
+  constructor(private http: HttpClient) {}
 
-  constructor(private http : HttpClient) { }
-
-
-  getPosts(): Observable<Post[]>{
-    return this.http.get<Post[]>(this.apiUrl);
+  getPosts(): Observable<any[]> {
+    return this.http.get<any[]>(this.apiUrl);
   }
 
-  creatPost(post: Post): Observable<Post>{
-    return this.http.post<Post>(this.apiUrl, post);
+  getPostById(id: string): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/${id}`);
   }
 
+  createPost(post: any): Observable<any> {
+    return this.http.post<any>(this.apiUrl, post); // Assure-toi que c'est un POST
+  }
 
-  updatePost(post: Post): Observable<Post>{
-    return this.http.post<Post>(this.apiUrl, post);
+  updatePost(id: string, post: any): Observable<any> {
+    return this.http.put<any>(`${this.apiUrl}/${id}`, post);
+  }
+
+  deletePost(id: string): Observable<any> {
+    return this.http.delete<any>(`${this.apiUrl}/${id}`);
   }
 }
